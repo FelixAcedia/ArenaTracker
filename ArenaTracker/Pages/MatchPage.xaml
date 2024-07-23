@@ -1,0 +1,40 @@
+<Page x:Class="ArenaTracker.Pages.MatchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      
+      xmlns:vm="clr-namespace:ArenaTracker.ViewModels"
+      xmlns:uc="clr-namespace:ArenaTracker.UserControls"
+      
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Page.DataContext>
+        <vm:MatchViewModel/>
+    </Page.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <ListView Margin="20"/>
+        
+        <StackPanel Grid.Column="1" Margin="5" Orientation="Vertical">
+            <GroupBox Header="Match-up">
+                <StackPanel Margin="5">
+                    <uc:FighterSelector Height="25"/>
+                    <Label Content="VS" HorizontalContentAlignment="Center"/>
+                    <uc:FighterSelector Height="25"/>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton VerticalAlignment="Center"/>
+                        <Label Content="Team Match"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>
